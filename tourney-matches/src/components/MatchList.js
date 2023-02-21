@@ -1,20 +1,18 @@
 import Match from "./Match";
 
-
 function MatchList(props) {
-  const listMatches=[];
-
-  for (const match of props.matchData) {
-    listMatches.push(
-     
-       
-        <Match players={match.players} winner={match.winner} scoreDifference={match.scoreDifference}/>
-      
+  const matches = props.matchData.map((match) => {
+    return (
+      <Match
+        players={match.players}
+        winner={match.winner}
+        scoreDifference={match.scoreDifference}
+      />
     );
-  }
+  });
   return (<section className="MatchList">
-  <h1>Match List</h1>{listMatches}</section>);
-  
+    <h1>Match List</h1>{matches}</section>);
+
 }
 
 export default MatchList;

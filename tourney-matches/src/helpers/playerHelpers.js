@@ -2,7 +2,7 @@ export function preparePlayerData(playerData) {
   return Object.values(playerData);
 }
 
-export function addWinsToPlayers(playerDataArray,matchData) {
+export function addWinsToPlayers(playerDataArray, matchData) {
   return playerDataArray.map(player => {
     // Calculating the number of wins in the matchData
     const currentWins = matchData.reduce((accumulator, match) => {
@@ -13,7 +13,6 @@ export function addWinsToPlayers(playerDataArray,matchData) {
         return accumulator;
       }
     }, 0);
-
     // Assigns the value to the wins key
     player.wins = currentWins;
 
